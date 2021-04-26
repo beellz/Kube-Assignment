@@ -13,7 +13,12 @@ spec:
         component: postgres
     spec:
       containers:
-        - name: postgrers
+        - name: postgres
           image: postgres
           ports: 
            - containerPort: 5432
+
+          envFrom:
+            - configMapRef:
+                name: postgres-configmap
+                
